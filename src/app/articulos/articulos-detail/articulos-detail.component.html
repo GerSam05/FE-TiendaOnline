@@ -1,1 +1,20 @@
-<p>articulos-detail works!</p>
+<div>
+  <h4 class="title">Detalles del Artículo</h4>
+</div>
+
+@if (articulo != null){
+<div class="container">
+  <mat-card class="card">
+      <mat-card-title>{{ articulo.nombre }}</mat-card-title><br>
+      <mat-card-content>
+          <p><strong>Código:</strong> {{ articulo.codigo }}</p>
+          <p><strong>Marca:</strong> {{ articulo.marca }}</p>
+          <p><strong>Categoría:</strong> {{ articulo.categoria }}</p>
+          <p><strong>Precio:</strong> {{ articulo.precio }}</p>
+      </mat-card-content>
+      <mat-card-actions style="justify-content: center;">
+          <button routerLink="/articulos">Volver</button>
+      </mat-card-actions>
+  </mat-card>
+</div>
+}

@@ -46,6 +46,5 @@ export class ArticulosListComponent implements OnInit {
   }
 
   eliminarArticulo(id: number) {
-
   }
 }
