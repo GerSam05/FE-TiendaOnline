@@ -1,5 +1,5 @@
 export interface Articulo {
-  id: number;
+  id?: number;
   codigo: string;
   nombre: string;
   marca: string;

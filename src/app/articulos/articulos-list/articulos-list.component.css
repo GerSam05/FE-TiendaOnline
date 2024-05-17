@@ -1,0 +1,12 @@
+.delete {
+  cursor: pointer;
+}
+
+.edit {
+  cursor: pointer;
+  color: #1678B0;
+}
+
+.search {
+  cursor: pointer;
+}

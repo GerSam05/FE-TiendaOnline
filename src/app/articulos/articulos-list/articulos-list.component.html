@@ -1,1 +1,52 @@
-<p>articulos-list works!</p>
+
+<div class="container">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="codigo">
+    <th mat-header-cell *matHeaderCellDef> Código </th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.codigo}} </td>
+  </ng-container>
+  <!-- Name Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.nombre}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="marca">
+    <th mat-header-cell *matHeaderCellDef> Marca </th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.marca}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="categoria">
+    <th mat-header-cell *matHeaderCellDef> Categoría </th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.categoria}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="precio">
+    <th mat-header-cell *matHeaderCellDef> Precio </th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.precio}}$ </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>
+        <button color="primary">Agregar</button>
+    </th>
+    <td mat-cell *matCellDef="let articulo">
+        <mat-icon routerLink="/detail/{{ articulo.id }}" class="search" matTooltip="detalles" fontIcon="search"></mat-icon>
+        <mat-icon routerLink="/edit/{{ articulo.id }}" class="edit" matTooltip="editar" fontIcon="edit"></mat-icon>
+        <mat-icon (click)="eliminarArticulo(articulo.id)" class="delete" matTooltip="eliminar" fontIcon="delete"></mat-icon>
+    </td>
+</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>

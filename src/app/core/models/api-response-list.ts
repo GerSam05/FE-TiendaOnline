@@ -1,8 +1,8 @@
 import { Articulo } from "./articulo"
 
-export interface ApiResponse {
+export interface ApiResponseList {
   statusCode: number;
   isSuccess: boolean;
   message: string;
-  result: Articulo;
+  result: Articulo[];
 }
