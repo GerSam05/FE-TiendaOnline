@@ -46,5 +46,9 @@ export class ArticulosListComponent implements OnInit {
   }
 
   eliminarArticulo(id: number) {
+    this._articulosService.deleteArticulo(id).subscribe((response) => {
+      alert(`${response.message}`)
+      this.obtenerArticulos();
+    });
   }
 }

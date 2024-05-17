@@ -21,4 +21,8 @@ export class ArticulosService {
     return this.http.get<ApiResponse>(`${this.myApiUrl}${id}`);
   }
 
+  deleteArticulo(id: number): Observable<ApiResponse>{
+    return this.http.delete<ApiResponse>(`${this.myApiUrl}${id}`);
+  }
+
 }
