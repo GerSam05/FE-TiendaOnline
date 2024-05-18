@@ -1,1 +1,49 @@
-<p>articulos-add-edit works!</p>
+<div class="title">
+  <h3>{{operacion}} Artículo</h3>
+</div>
+
+<div class="container">
+  <mat-card class="card">
+      <mat-card-subtitle>
+          Datos del Artículo
+      </mat-card-subtitle>
+      <form [formGroup]="form" (ngSubmit)="aggEditarArticulo()">
+          <mat-grid-list cols="2" rowHeight="80px">
+              <mat-grid-tile [colspan]="2">
+                  <mat-form-field appearance="fill">
+                      <mat-label>Codigo</mat-label>
+                      <input formControlName="codigo" matInput>
+                  </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="fill">
+                      <mat-label>Nombre</mat-label>
+                      <input formControlName="nombre" matInput>
+                  </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="fill">
+                      <mat-label>Marca</mat-label>
+                      <input formControlName="marca" matInput>
+                  </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="fill">
+                      <mat-label>Categoria</mat-label>
+                      <input formControlName="categoria" matInput>
+                  </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="fill">
+                      <mat-label>Precio</mat-label>
+                      <input type="number" formControlName="precio" matInput>
+                  </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                  <button [disabled]="form.invalid" type="submit" class="btnAceptar" mat-raised-button color="primary">Aceptar</button>
+                  <button mat-raised-button (click)="preventFormSubmit($event)">Volver</button>
+              </mat-grid-tile>
+            </mat-grid-list>
+      </form>
+  </mat-card>
+</div>

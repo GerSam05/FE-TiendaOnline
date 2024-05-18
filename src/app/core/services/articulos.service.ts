@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiResponseList } from '../models/api-response-list';
 import { ApiResponse } from '../models/api-response';
+import { Articulo } from '../models/articulo';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,14 @@ export class ArticulosService {
 
   getArticulo(id: number): Observable<ApiResponse>{
     return this.http.get<ApiResponse>(`${this.myApiUrl}${id}`);
+  }
+
+  postArticulo(articulo: Articulo): Observable<ApiResponse>{
+    return this.http.post<ApiResponse>(`${this.myApiUrl}`, articulo);
+  }
+
+  putArticulo(id: number, articulo: Articulo): Observable<ApiResponse>{
+    return this.http.put<ApiResponse>(`${this.myApiUrl}${id}`, articulo);
   }
 
   deleteArticulo(id: number): Observable<ApiResponse>{
